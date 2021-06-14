@@ -1,12 +1,16 @@
 ## Resume
 
-You can use the [editor on GitHub](https://github.com/Chaconine/website-resume/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Career Objective
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+An engineer interested in making concise, accessible, and intuitive data visualizations for better reasoning complex relationships between data.
 
-### Markdown
+### Projects
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. 3D computer vision tracking with the Microsoft Kinect
+2. Website design for Taga Lab at Berkeley
+3. Visualizations in D3.js
+4. Training graph neural networks 
+5. Math with manim, initially developed by 3b1b
 
 ```markdown
 Syntax highlighted code block
