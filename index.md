@@ -16,6 +16,8 @@ An engineer interested in making concise, accessible, and intuitive data visuali
 
 - Tested unsupervised methods for understanding social behaviors
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ib26lk4dvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 2. [Static website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
 - Written from scratch, hosted on github pages
 
