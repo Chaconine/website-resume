@@ -1,35 +1,35 @@
 ## Resume
 
-Testing
+### Career Objective
 
-### Markdown
+An engineer interested in making concise, accessible, and intuitive data visualizations for better reasoning complex relationships between data.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Projects
 
-```markdown
-Syntax highlighted code block
+1. [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+- Developed 3D visualizer for Python with package pptk
+- Tested unsupervised methods for understanding social behaviors
 
-**Bold** and _Italic_ and `Code` text
+2. [Static website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
+- Written from scratch, hosted on github.op
 
-[Link](url) and ![Image](src)
-```
+3. Visualizations in D3.js
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+4. Training graph neural networks 
+- Non-Euclidean relationships between data, (i.e. social graphs, citation networks) require unique approaches to embedding data so they can be visualized 
 
-### Jekyll Themes
+### Hobbies
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Chaconine/website-resume/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+1. Math with manim, initially developed by 3b1b
+2. Rome-wasnt-built-in-a-day, a visual 3d voxel bridge builder that uses reinforcement learning policies to build bridges of varying complexity
+3. Elementary Differential Geometry, Math 423 at UIUC, inspired parametric curve tracing on unit sphere in D3.js
 
-### Support or Contact
+### Education
+**UC Berkeley**<br/>
+Bachelor of Science in Microbial Biology<br/>
+GPA 3.71/4<br/>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
