@@ -8,7 +8,7 @@ An engineer interested in making concise, accessible, and intuitive data visuali
 
 1. [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
 
-<iframe width="420" height="315" src="https://youtu.be/pSL2Q0v8fgA" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dnkyyjuUDek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - Developed 3D visualizer for Python with package pptk that renders 2 million points
 
