@@ -1,1 +1,7 @@
 theme: jekyll-theme-minimal
+title: Joseph Maa
+description: An engineer interested in making concise, accessible, and intuitive data visualizations for better reasoning complex relationships between data.
+github_username: Chaconine
+
+
+markdown: kramdown
