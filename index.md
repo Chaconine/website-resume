@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Resume
 
 You can use the [editor on GitHub](https://github.com/Chaconine/website-resume/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
