@@ -197,7 +197,7 @@ function update() {
             })
             .attr("width", xScale.bandwidth())
             .attr("y", function (d) {
-            return yScale(d["Per_Set"]);
+            return 0;
             })
             .attr("height", function (d) {
             return height - yScale(d["Per_Set"]);
