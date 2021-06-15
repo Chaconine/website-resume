@@ -87,15 +87,17 @@ barChart.init();
 
 - NCAA D1 volleyball statistics
 
-<select id="selectButton"></select>
-<div id="my_dataviz"></div>
+<select name="Stats" id="stats">
+  <option value="aces" selected>Aces</option>
+  <option value="assists">Assists</option>
+  <option value="hitting">Hitting</option>
 
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+</select><div id="my_dataviz"></div>
 
 <script type="text/javascript">
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
+var margin = {top: 10, right: 30, bottom: 30, left: 10},
     width = 560,
     height = 315;
 
@@ -108,9 +110,19 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-  var n = 50,
-    random = function() { return Math.floor(Math.random() * 100); },
-    data = d3.range(n).map(random); 
+var datasets = {aces: "data/aces.csv",
+                assists: "data/assists.csv",
+                hitting: "data/hitting.csv"};
+
+var path = datasets[document.getElementById("my_dataviz").value];
+
+console.log(path)
+
+//Read the data
+d3.csv(path, function(data) {
+
+    // List of groups (here I have one group per column)
+    var allGroup = data[0]
 
     d3.select("#selectButton")
       .selectAll('myOptions')

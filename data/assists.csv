@@ -1,51 +1,43 @@
-Rank,Name,School,CL,Height,S,Assists,Per Set
-1,Casey McGarry,UC Santa Barbara,Sr.,6-1,74,816,11.03
-2,Kevin Kauling,Lewis,So.,6-8,83,900,10.84
-3,Quinn Isaacson,Ball St.,Sr.,6-2,74,800,10.81
-4,Moses Kresch,Barton,Jr.,6-2,52,557,10.71
-5,Jakob Thelle,Hawaii,So.,6-6,65,695,10.69
-6,Brennan Davis,Belmont Abbey,Sr.,6-0,88,931,10.58
-7,Chris Hall,Southern California,Sr.,6-2,65,678,10.43
-8,Sam Kobrine,UCLA,Sr.,6-3,80,827,10.34
-9,Wil Stanley,BYU,Sr.,6-4,77,790,10.26
-10,Garrett Zolg,Loyola Chicago,Sr.,6-3,78,794,10.18
-11,Sergio Carrillo,North Greenville,Jr.,6-5,66,668,10.12
-12,JT Deppe,King (TN),Sr.,6-3,77,772,10.03
-13,AJ Risavy,Lincoln Memorial,Jr.,6-7,54,539,9.98
-14,Heath Hughes,Grand Canyon,So.,6-7,64,638,9.97
-15,Michael Wright,Ohio St.,So.,6-4,50,486,9.72
-16,Cole Bogner,Penn St.,Jr.,6-3,83,806,9.71
-17,Henrik Westhoff,Emmanuel (GA),So.,6-6,87,842,9.68
-18,Andrew Piloto,St. Francis Brooklyn,So.,6-2,24,229,9.54
-19,Christos Gkitersos,Limestone,So.,6-4,86,816,9.49
-20,Ryan Serrano,McKendree,Jr.,6-3,63,585,9.29
-21,Jarrod Ferguson,Mount Olive,Jr.,6-6,67,622,9.28
-22,Bryce Dvorak,Pepperdine,Fr.,6-4,69,638,9.25
-23,Juan Alcoba,Erskine,Fr.,6-3,83,764,9.20
-24,Griffin Fieseler,NJIT,Fr.,6-7,56,515,9.20
-25,Michael Krueger,Daemen,Jr.,6-2,26,237,9.12
-26,Nathan Lietzke,Stanford,So.,6-6,57,519,9.11
-27,Kyle Merchen,CSUN,So.,6-4,41,366,8.93
-28,Blake Crisp,UC San Diego,Jr.,6-3,65,575,8.85
-29,Yoran Raymaekers,Quincy,Sr.,6-4,48,407,8.48
-30,Che' Arbo,Alderson Broaddus,Fr.,6-1,39,325,8.33
-31,Aidan Knipe,Long Beach St.,Fr.,6-3,35,289,8.26
-32,Dylan Zhai,UC Irvine,Fr.,6-1,59,480,8.14
-33,Mclain Mott,Concordia (CA),So.,6-2,57,460,8.07
-34,Lucas Blanco,Tusculum,So.,6-3,61,489,8.02
-35,Diego Villafane,Charleston (WV),Jr.,6-1,62,491,7.92
-36,Riley Chapman,Lees-McRae,Fr.,6-0,58,447,7.71
-37,AJ Schmidt,Saint Francis (PA),So.,6-5,80,443,5.54
-38,Ryan Poole,Long Beach St.,Sr.,6-5,42,230,5.48
-39,Bartosz Slawinski,Barton,Fr.,6-3,60,225,3.75
-40,Matt Friddle,Quincy,Sr.,6-4,43,119,2.77
-41,Bradley Peters,Lees-McRae,So.,6-2,72,144,2.00
-42,Michal Podgorzak,Limestone,Jr.,5-11,80,94,1.18
-43,Troy Gooch,Purdue Fort Wayne,Jr.,6-0,53,51,.96
-44,Diego Negron,Lindenwood (MO),Jr.,6-5,64,52,.81
-45,Cole Paxson,Southern California,Sr.,5-11,65,47,.72
-46,Will Bantle,Penn St.,Jr.,6-5,86,61,.71
-47,Francisco Comas,McKendree,Jr.,5-6,63,44,.70
-48,Spencer Wickens,Pepperdine,Sr.,5-11,72,50,.69
-49,Noam Hannoun,Quincy,Jr.,5-11,55,36,.65
-50,Gage Worsley,Hawaii,Jr.,6-1,65,42,.65
+Rank,School,S,Assists,Per Set
+1,Hawaii,65,817,12.57
+2,UCLA,80,1001,12.51
+3,UC Santa Barbara,74,923,12.47
+4,Ball St.,75,927,12.36
+5,Mount Olive,69,849,12.30
+6,Long Beach St.,47,565,12.02
+7,Purdue Fort Wayne,60,721,12.02
+8,Ohio St.,71,851,11.99
+9,Belmont Abbey,88,1054,11.98
+10,Southern California,65,777,11.95
+11,Lewis,83,986,11.88
+12,Barton,73,865,11.85
+13,Loyola Chicago,78,912,11.69
+14,Pepperdine,72,830,11.53
+15,BYU,81,931,11.49
+16,Grand Canyon,72,827,11.49
+17,George Mason,79,904,11.44
+18,Lincoln Memorial,70,797,11.39
+19,Limestone,88,991,11.26
+20,North Greenville,66,743,11.26
+21,King (TN),91,1007,11.07
+22,Lindenwood (MO),65,719,11.06
+23,NJIT,65,717,11.03
+24,Penn St.,86,948,11.02
+25,Queens (NC),102,1124,11.02
+26,UC San Diego,68,743,10.93
+27,UC Irvine,62,674,10.87
+28,Emmanuel (GA),87,941,10.82
+29,McKendree,63,674,10.70
+30,Daemen,36,384,10.67
+31,St. Francis Brooklyn,24,255,10.62
+32,Concordia (CA),62,646,10.42
+33,CSUN,41,425,10.37
+34,Stanford,61,632,10.36
+35,Erskine,88,896,10.18
+36,Saint Francis (PA),103,1037,10.07
+37,Alderson Broaddus,39,386,9.90
+38,Quincy,61,595,9.75
+39,Tusculum,65,630,9.69
+40,Charleston (WV),62,567,9.15
+41,Lees-McRae,75,648,8.64
+42,Sacred Heart,68,569,8.37
