@@ -8,8 +8,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 
-<script src="js/chart.js" type="text/javascript">
-</script>
+<script src="js/chart.js" type="text/javascript"></script>
+
+<div id="example"></div>
 
 - [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
