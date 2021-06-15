@@ -170,10 +170,10 @@ function update() {
             .text("Schools");
             //select all text labels in the axis, then position + rotate
             .selectAll("text")  
-            .style("text-anchor", "end")
-            .attr("dx", "-1em")
-            .attr("dy", "-0.5em")
-            .attr("transform", "rotate(-90)");
+                .style("text-anchor", "end")
+                .attr("dx", "-1em")
+                .attr("dy", "-0.5em")
+                .attr("transform", "rotate(-90)");
 
         //Adding Y Axis
         svg
