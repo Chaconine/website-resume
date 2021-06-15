@@ -84,8 +84,6 @@ barChart.init();
 var width = 560,
     height = 315;
 
-var fill = d3.scaleOrdinal(d3.schemeCategory10());
-
 var force = d3.layout.force()
     .size([width, height])
     .nodes([{}]) // initialize with a single node
