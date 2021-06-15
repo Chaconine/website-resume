@@ -115,17 +115,6 @@ var path = datasets[document.getElementById("stats").value];
 //Read the data
 d3.csv(path).then(function(data) {
 
-    // List of groups (here I have one group per column)
-    var allGroup = data[0]
-
-    var selected = d3.select("#selectButton")
-      .selectAll('myOptions')
-     	.data(allGroup)
-      .enter()
-    	.append('option')
-      .text(function (d) { return d; }) // text shown in the menu
-      .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
     var xScale = d3
         .scaleBand()
         .range([0, width])
@@ -141,11 +130,9 @@ d3.csv(path).then(function(data) {
     yScale.domain([
         0,
         d3.max(data, function (d) {
-        return d[selected];
+        return d["Per_Set"];
         }),
     ]);
-
-    console.log(selected)
 
     console.log("test")
 })
