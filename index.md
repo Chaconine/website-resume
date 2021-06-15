@@ -91,8 +91,9 @@ barChart.init();
   <option value="aces" selected>Aces</option>
   <option value="assists">Assists</option>
   <option value="hitting">Hitting</option>
+</select>
 
-</select><div id="my_dataviz"></div>
+<div id="my_dataviz"></div>
 
 <script type="text/javascript">
 
