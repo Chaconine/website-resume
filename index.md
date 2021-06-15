@@ -263,7 +263,7 @@ function update() {
         
         //Read the data
         d3.csv(path).then(function(data) {
-
+        console.log(data)
         //Set Ranges for X and Y scales
         var xScale = d3
             .scaleBand()
