@@ -132,6 +132,7 @@ d3.csv(path, function(data) {
     	.append('option')
       .text(function (d) { return d; }) // text shown in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
+})
 
 </script>
 
