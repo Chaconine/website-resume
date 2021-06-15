@@ -115,6 +115,8 @@ var datasets = {Aces: "data/aces.csv",
 
 // A function that updates the chart
 function update() {
+        var svg.selectall().remove();
+
         var path = datasets[document.getElementById("stats").value];
 
         //Read the data
@@ -193,6 +195,8 @@ function update() {
             });
     })
 }
+
+update()
 
 // When the button is changed, run the updateChart function
 d3.select("#stats").on("change", function(d) {
