@@ -84,7 +84,7 @@ barChart.init();
 var width = 560,
     height = 315;
 
-var fill = d3.schemeCategory10();
+var fill = d3.scaleOrdinal(d3.schemeCategory10());
 
 var force = d3.layout.force()
     .size([width, height])
@@ -226,7 +226,7 @@ function update() {
             .padding(0.2);
         var yScale = d3
             .scaleLinear()
-            .range([height, 0.2*height]);
+            .range([height, 0]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -245,8 +245,8 @@ function update() {
         //X axis
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + -0.2*height + ")")
             .call(d3.axisBottom(xScale))
+            .attr("transform", "translate(0," + height + ")")
 
 
         //Y axis
