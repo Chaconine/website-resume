@@ -255,7 +255,7 @@ xScale.domain(
 yScale.domain([
     0,
     d3.max(data, function (d) {
-        return d.Per_Set;
+        return d.PerSet;
     })
 ]);
 
@@ -287,7 +287,7 @@ svg
         return height;
     })
     .attr("height", function (d) {
-        return height - yScale(d.Per_Set);
+        return height - yScale(d.PerSet);
     });
 })
     
