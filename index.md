@@ -224,8 +224,8 @@ function dragended(d) {
 
 //--------------------------PREPARATION--------------------------//
 //------------------------SVG PREPARATION------------------------//
-var width = 960;
-var height = 500;
+var width = 800;
+var height = 600;
 var margin = 5;
 var padding = 5;
 var adj = 20;
@@ -247,16 +247,9 @@ var yScale = d3.scaleLinear()
 
 //------------------------DATA PREPARATION-----------------------//
 var dataset = d3.csv("data.csv");
-dataset.then(function(data) {
-    data.map(function(d) {
-            d.val = +d.val;
-            return d;});
-});
-
 dataset.then(function(data) {  
     xScale.domain(data.map(function(d) {return d.cat}))
-    yScale.domain([0, d3.max(data, function(d)
-                             {return d.val; })]);
+    yScale.domain([0, d3.max(data, function(d) {return d.val; })]);
 });
 
 console.log(dataset);
