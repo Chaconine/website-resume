@@ -88,12 +88,12 @@ var force = d3.forceSimulation()
     .nodes([{}]) // initialize with a single node
     .force("link", d3.forceLink().distance(linkDistance).strength(0.1))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+    .force("center", d3.forceCenter(width / 2, height / 2))
     .on("tick", tick);
 
 function linkDistance(d) {
     return d.distance;
-}
+};
 
 var svg = d3.select("#graph").append("svg")
     .attr("width", width)
@@ -205,7 +205,7 @@ var datasets = {Aces: "data/aces.csv",
 
 // A function that updates the chart
 function update() {
-        
+        console.log(d.Per_Set)
         document.getElementById("volleyball").innerHTML="";
 
         // append the svg object to the body of the page
