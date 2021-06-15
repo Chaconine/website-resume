@@ -89,6 +89,8 @@ var force = d3.forceSimulation()
     .nodes([{}]) // initialize with a single node
     .linkDistance(30)
     .charge(-60)
+    .force("x", d3.forceX([width/2]).strength(0.01))
+    .force("y", d3.forceY([height/2]).strength(0.01))
     .on("tick", tick);
 
 var svg = d3.select("#graph").append("svg")
