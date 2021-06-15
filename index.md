@@ -89,12 +89,22 @@ barChart.init();
 
 <select id="selectButton"></select>
 <div id="my_dataviz"></div>
+
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <script type="text/javascript">
 
   var n = 50,
-    data = d3.csv(data/assists.csv); 
+    random = function() { return Math.floor(Math.random() * 100); },
+    data = d3.range(n).map(random); 
+
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+     	.data(allGroup)
+      .enter()
+    	.append('option')
+      .text(function (d) { return d; }) // text showed in the menu
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 var barChart = {
   init: function() {
