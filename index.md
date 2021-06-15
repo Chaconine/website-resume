@@ -157,7 +157,7 @@ function update() {
         //Adding X Axis
         svg
             .append("g")
-            .attr("transform", "translate(0,110)")
+            .attr("transform", "translate(0,210)")
             .call(d3.axisBottom(xScale));
 
         //X axis label
