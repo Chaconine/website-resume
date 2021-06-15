@@ -132,8 +132,8 @@ function update() {
         d3.csv(path).then(function(data) {
 
         //Set Ranges for X and Y Scale
-        xPadding = 50;
-        yPadding = 50;
+        xPadding = 100;
+        yPadding = 100;
 
         var xScale = d3
             .scaleBand()
@@ -144,13 +144,13 @@ function update() {
         //Adding domain values to X and Y Scale
         xScale.domain(
             data.map(function (d) {
-            return d.School;
+                return d.School;
             })
         );
         yScale.domain([
             0,
             d3.max(data, function (d) {
-            return d["Per_Set"];
+                return d.Per_Set;
             }),
         ]);
 
