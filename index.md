@@ -141,7 +141,7 @@ function update() {
             .padding(0.2);
         var yScale = d3
             .scaleLinear()
-            .range([0, height]);
+            .range([height, 0]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
