@@ -262,8 +262,15 @@ yScale.domain([
 //X axis
 svg.append("g")
     .attr("class", "x axis")
-    .call(d3.axisBottom(xScale))
     .attr("transform", "translate(0,10)")
+    .call(d3.axisBottom(xScale))
+    .selectAll("text")
+        .attr("y", 0)
+        .attr("x", 9)
+        .attr("dy", ".35em")
+        .attr("transform", "rotate(90)")
+        .style("text-anchor", "start");
+
 
 //Y axis
 svg
@@ -271,7 +278,7 @@ svg
     .call(d3.axisLeft(yScale))
     .attr("transform", "translate(10,0)")
     .append("text")
-    .text("Per Set")
+    .text("Per Set");
 
 //Bars
 svg
