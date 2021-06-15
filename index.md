@@ -157,17 +157,17 @@ function update() {
         //Adding X Axis
         svg
             .append("g")
-            .attr("transform", "translate(0,550)")
+            .attr("transform", "translate(0,350)")
             .call(d3.axisBottom(xScale));
 
         //X axis label
         svg
             .append("text")
             .attr("class", "source")
-            .attr("x", height/2)
-            .attr("y", width)
+            .attr("x", width/2)
+            .attr("y", height)
             .attr("text-anchor", "start")
-            .text("School");
+            .text("Schools");
 
         //Adding Y Axis
         svg
