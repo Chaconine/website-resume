@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/png" href="{{ "/assets/favicon.png"  | absolute_url }}">
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png?">
 
 ## Resume
 
