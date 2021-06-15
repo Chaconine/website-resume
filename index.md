@@ -92,7 +92,7 @@ barChart.init();
 
 - [Blogging about neuroscience](https://sonichedgehogs.com/)
 
-- Volleyball
+- NCAA volleyball statistics
 
 <!-- Initialize a select button -->
 <select id="selectButton"></select>
