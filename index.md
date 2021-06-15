@@ -170,7 +170,7 @@ function restart() {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QMzvg8Z4-fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Elementary Differential Geometry](https://netmath.illinois.edu/college/math-423), Math 423 at UIUC, inspired parametric curve tracing on unit sphere in D3.js
+- [Elementary Differential Geometry](https://netmath.illinois.edu/college/math-423), Math 423 at UIUC
 
 - NCAA D1 volleyball statistics
 
