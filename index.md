@@ -117,7 +117,7 @@ var datasets = {aces: "data/aces.csv",
 
 var path = datasets[document.getElementById("my_dataviz").value];
 
-console.log(document.getElementById("my_dataviz").value]);
+console.log(document.getElementById("my_dataviz").value);
 
 //Read the data
 d3.csv(path, function(data) {
