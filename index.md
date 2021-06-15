@@ -241,10 +241,13 @@ d3.csv("data/aces.csv").then(function(data) {
 var xScale = d3
     .scaleBand()
     .range([0, width])
+    .round(true)
     .padding(0.2);
 var yScale = d3
     .scaleLinear()
-    .range([height, 0]);
+    .range([height, 0])
+    .round(true)
+    .padding(0.2);
 
 //Adding domain values to X and Y Scale
 xScale.domain(
