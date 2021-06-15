@@ -86,11 +86,14 @@ var width = 560,
 
 var force = d3.forceSimulation()
     .nodes([{}]) // initialize with a single node
-    .linkDistance(30)
-    .charge(-60)
-    .force("x", d3.forceX([width/2]).strength(0.01))
-    .force("y", d3.forceY([height/2]).strength(0.01))
+    .force("link", d3.forceLink().distance(linkDistance).strength(0.1))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
     .on("tick", tick);
+
+function linkDistance(d) {
+    return d.distance;
+}
 
 var svg = d3.select("#graph").append("svg")
     .attr("width", width)
