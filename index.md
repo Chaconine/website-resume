@@ -1,5 +1,3 @@
-<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png">
-
 ## Resume
 
 ### Projects
@@ -8,7 +6,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 
-{% include chart.js %}
+<script>{% include chart.js %}</script>
 
 - [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
