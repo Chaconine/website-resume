@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 0, right: 0, bottom: 0, left: 0 };
+    var margin = { top: 20, right: 20, bottom: 20, left: 20 };
     var width = 622 - margin.left - margin.right;
     var height = 350 - margin.top - margin.bottom;
 
@@ -137,9 +137,11 @@ function update() {
 
         var xScale = d3
             .scaleBand()
-            .range([xPadding, width - xPadding])
+            .range([0, width])
             .padding(0.2);
-        var yScale = d3.scaleLinear().range([height-yPadding, yPadding]);
+        var yScale = d3
+            .scaleLinear()
+            .range([0, height]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -151,38 +153,22 @@ function update() {
             0,
             d3.max(data, function (d) {
                 return d.Per_Set;
-            }) * 1.2,
+            })
         ]);
             
 
         //X axis label
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height - yPadding + ")")
             .call(d3.axisBottom(xScale))
-            .selectAll("text")
-                .attr("y", height)
-                .attr("x", 0)
-                .attr("dy", ".35em")
-                .attr("transform", "rotate(90)")
-                .style("text-anchor", "start");
 
-        //Adding Y Axis
+        //Adding Y Axis and label
         svg
             .append("g")
             .call(d3.axisLeft(yScale))
-            .attr("transform", "translate(0,10)");
-
-        //Y axis label
-        svg
             .append("text")
-            .attr("class", "y label")
-            .attr("text-anchor", "end")
-            .attr("y", 0)
-            .attr("x", 10)
-            .attr("dy", ".75em")
             .text("Per Set")
-            .attr("transform", "translate(0,-10)");
+
 
         //Bars
         svg
@@ -195,10 +181,10 @@ function update() {
             })
             .attr("width", xScale.bandwidth())
             .attr("y", function (d) {
-                return yScale(d["Per_Set"]);
+                return yScale(d.Per_Set);
             })
             .attr("height", function (d) {
-                return height - yScale(d["Per_Set"]);
+                return height - yScale(d.Per_Set);
             });
     })
 }
