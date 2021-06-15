@@ -132,8 +132,8 @@ function update() {
         d3.csv(path).then(function(data) {
 
         //Set Ranges for X and Y Scale
-        xPadding = 100;
-        yPadding = 100;
+        xPadding = 0;
+        yPadding = 10;
 
         var xScale = d3
             .scaleBand()
@@ -153,27 +153,19 @@ function update() {
                 return d.Per_Set;
             }) * 1.5,
         ]);
-
-        //Adding X Axis
-        svg
-            .append("g")
-            .attr("transform", "translate(0,210)")
-            .call(d3.axisBottom(xScale));
+            
 
         //X axis label
-        svg
-            .append("text")
-            .attr("class", "source")
-            .attr("x", width/2)
-            .attr("y", height)
-            .attr("text-anchor", "start")
-            .text("Schools")
-            //select all text labels in the axis, then position + rotate
-            .selectAll("text")  
-                .style("text-anchor", "end")
-                .attr("dx", "-1em")
-                .attr("dy", "-0.5em")
-                .attr("transform", "rotate(-90)");
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(xScale));
+            .selectAll("text")
+                .attr("y", 0)
+                .attr("x", 9)
+                .attr("dy", ".35em")
+                .attr("transform", "rotate(90)")
+                .style("text-anchor", "start");
 
         //Adding Y Axis
         svg
