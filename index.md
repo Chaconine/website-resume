@@ -197,10 +197,10 @@ function update() {
             })
             .attr("width", xScale.bandwidth())
             .attr("y", function (d) {
-            return yScale(d["Per_Set"]);
+                return yScale(d["Per_Set"]);
             })
             .attr("height", function (d) {
-            return height - yScale(d["Per_Set"]);
+                return height - yScale(d["Per_Set"]);
             });
     })
 }
