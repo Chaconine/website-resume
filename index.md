@@ -2,9 +2,9 @@
 
 ### Projects
 
-- Visualizations in D3.js
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+
+- [Visualizations in D3.js](https://github.com/Chaconine/website-resume)
 
 <svg id="graph"></svg>
 
@@ -200,15 +200,11 @@ function dragended(d) {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pSL2Q0v8fgA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ib26lk4dvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 - Training graph neural networks 
     - Non-Euclidean relationships between data, (i.e. social graphs, citation networks) require unique approaches to embedding data so they can be visualized 
     - Working through Stanford's CS224w, focused primarily on various implementations and architectures of graph neural nets in PyTorch
 
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ib26lk4dvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Hobbies
 
@@ -231,12 +227,12 @@ var padding = 5;
 var adj = 20;
 // we are appending SVG first
 var svg = d3.select("div#container").append("svg")
-.attr("preserveAspectRatio", "xMinYMin meet")
-//.attr("viewBox", "-20 -20 1600 1600")
-.attr("viewBox", "-" + adj + " -"+ adj + " " + (width + adj) + " " + (height + adj*2))
-.style("padding", padding)
-.style("margin", margin)
-.classed("svg-content", true);
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            //.attr("viewBox", "-20 -20 1600 1600")
+            .attr("viewBox", "-" + adj + " -"+ adj + " " + (width + adj) + " " + (height + adj*2))
+            .style("padding", padding)
+            .style("margin", margin)
+            .classed("svg-content", true);
 
 //-----------------------SCALES PREPARATION----------------------//
 var xScale = d3.scaleBand()
@@ -264,7 +260,6 @@ svg.append("g")
 svg.append("g")
     .attr("class", "axis")
     .call(d3.axisLeft(yScale));
-});
 
 //-----------------------------BARS------------------------------//
 dataset.then(function (data) { 
