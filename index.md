@@ -100,6 +100,9 @@ barChart.init();
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 
+<!-- Color Scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
 <script>
 
 // set the dimensions and margins of the graph
