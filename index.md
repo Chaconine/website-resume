@@ -115,9 +115,9 @@ var datasets = {aces: "data/aces.csv",
                 assists: "data/assists.csv",
                 hitting: "data/hitting.csv"};
 
-var path = datasets[document.getElementById("my_dataviz").value];
+var path = datasets[document.getElementById("stats").value];
 
-console.log(document.getElementById("my_dataviz").value);
+console.log(document.getElementById("stats").value);
 
 //Read the data
 d3.csv(path, function(data) {
