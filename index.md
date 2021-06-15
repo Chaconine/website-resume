@@ -6,7 +6,7 @@
 
 - Visualizations in D3.js
 
-<script src="_includes/chart.js" type="text/javascript"></script>
+<script src="js/chart.js" type="text/javascript"></script>
 
 - [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
