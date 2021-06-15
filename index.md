@@ -96,8 +96,8 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 10, right: 10, bottom: 10, left: 10 },
-    var width = 560 - margin.left - margin.right,
+    var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+    var width = 560 - margin.left - margin.right;
     var height = 315 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -168,6 +168,26 @@ d3.csv(path).then(function(data) {
         .attr("dy", ".75em")
         .text("Crime Rate")
         .attr("transform", "translate(-5,-19)");
+
+    //Bars
+    svg
+        .selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", function (d) {
+        return xScale(d.state);
+        })
+        .attr("width", xScale.bandwidth())
+        .attr("y", function (d) {
+        return yScale(d["crime_rate"]);
+        })
+        .attr("height", function (d) {
+        return height - yScale(d["crime_rate"]);
+        })
+        .style("fill", function (d) {
+        return colorScale(d["state"]);
+        });
 
     console.log("test")
 })
