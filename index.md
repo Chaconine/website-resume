@@ -9,8 +9,8 @@
 <svg id="graph"></svg>
 
 <script>
-var width = 800;
-var height = 600;
+var width = 560;
+var height = 315;
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 d3.json("data/miserables.json").then(function(graph) {
@@ -224,8 +224,8 @@ function dragended(d) {
 
 //--------------------------PREPARATION--------------------------//
 //------------------------SVG PREPARATION------------------------//
-var width = 800;
-var height = 600;
+var width = 560;
+var height = 315;
 var margin = 5;
 var padding = 5;
 var adj = 20;
