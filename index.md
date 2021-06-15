@@ -138,7 +138,7 @@ function update() {
             .padding(0.2);
         var yScale = d3
             .scaleLinear()
-            .range([height, 0]);
+            .range([height, 0.2*height]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -157,7 +157,7 @@ function update() {
         //X axis
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + 0.8*height + ")")
             .call(d3.axisBottom(xScale))
 
 
