@@ -219,63 +219,84 @@ function dragended(d) {
 
 - [NCAA D1 volleyball statistics](https://www.ncaa.com/stats/volleyball-men/d1/current/team/525)
 
-<div id="container" class="svg-container"></div>
+<div id="volleyball"></div>
 
-<script>
+<script type="text/javascript">
+    var margin = { top: 0, right: 0, bottom: 80, left: 0 };
+    var width = 622 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
 
-var width = 560;
-var height = 315;
-var margin = 5;
-var padding = 5;
-var adj = 20;
+// append the svg object to the body of the page
+var svg = d3.select("#volleyball")
+    .insert("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+//Read the data
+d3.csv("data/aces.csv").then(function(data) {
+    
+//Set Ranges for X and Y scales
+var xScale = d3
+    .scaleBand()
+    .range([0, width])
+    .padding(0.2);
+var yScale = d3
+    .scaleLinear()
+    .range([height, 0]);
 
-var svg = d3.select("div#container").append("svg")
-            .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", "-" + adj + " -"+ adj + " " + (width + adj) + " " + (height + adj*2))
-            .style("padding", padding)
-            .style("margin", margin)
-            .classed("svg-content", true);
-
-var xScale = d3.scaleBand()
-    .rangeRound([0, width])
-    .paddingInner(0.05);
-var yScale = d3.scaleLinear()
-    .rangeRound([height, 0]);
-
-var dataset = d3.csv("data/data.csv");
-dataset.then(function(data) {  
-    xScale.domain(data.map(function(d) {return d.cat}))
-    yScale.domain([0, d3.max(data, function(d) {return d.val; })]);
-});
-
-
-svg.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(xScale));
-
-svg.append("g")
-    .attr("class", "axis")
-    .call(d3.axisLeft(yScale));
-
-dataset.then(function (data) { 
-    svg.selectAll("div")
-    .data(data)
-    .enter().append("rect")
-    .attr("class", "bar")
-    .attr("x", function(d){
-        return xScale(d.cat);
+//Adding domain values to X and Y Scale
+xScale.domain(
+    data.map(function (d) {
+        return d.School;
     })
-    .attr("y", function (d) {
-        return yScale(d.val);
+);
+yScale.domain([
+    0,
+    d3.max(data, function (d) {
+        return d.Per_Set;
+    })
+]);
+
+//X axis
+svg.append("g")
+    .attr("class", "x axis")
+    .call(d3.axisBottom(xScale))
+    .attr("transform", "translate(0," + height + ")")
+
+
+//Y axis
+svg
+    .append("g")
+    .call(d3.axisLeft(yScale))
+    .attr("transform", "translate(10,0)")
+    .append("text")
+    .text("Per Set")
+
+
+//Bars
+svg
+    .selectAll(".bar")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", function (d) {
+        return xScale(d.School);
     })
     .attr("width", xScale.bandwidth())
+    .attr("y", function (d) {
+        return height;
+    })
     .attr("height", function (d) {
-        return height - yScale(d.val);
+        return height - yScale(d.Per_Set);
     });
-});
+})
+    
+console.log("test")
 
 </script>
+
 
 - [Blogging about neuroscience](https://sonichedgehogs.com/)
 
