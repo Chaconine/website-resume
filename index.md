@@ -88,9 +88,9 @@ barChart.init();
 - NCAA D1 volleyball statistics
 
 <select name="Stats" id="stats">
-  <option value="aces" selected>Aces</option>
-  <option value="assists">Assists</option>
-  <option value="hitting">Hitting</option>
+  <option value="Aces" selected>Aces</option>
+  <option value="Assists">Assists</option>
+  <option value="Hitting">Hitting</option>
 </select>
 
 <div id="my_dataviz"></div>
@@ -111,9 +111,9 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var datasets = {aces: "data/aces.csv",
-                assists: "data/assists.csv",
-                hitting: "data/hitting.csv"};
+var datasets = {Aces: "data/aces.csv",
+                Assists: "data/assists.csv",
+                Hitting: "data/hitting.csv"};
 
 var path = datasets[document.getElementById("stats").value];
 
@@ -144,6 +144,8 @@ d3.csv(path).then(function(data) {
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
+
+    console.log("test")
 })
 
 </script>
