@@ -176,17 +176,14 @@ d3.csv(path).then(function(data) {
         .enter()
         .append("rect")
         .attr("x", function (d) {
-        return xScale(d.state);
+            return xScale(d.School);
         })
         .attr("width", xScale.bandwidth())
         .attr("y", function (d) {
-        return yScale(d["crime_rate"]);
+        return yScale(d["Per_Set"]);
         })
         .attr("height", function (d) {
-        return height - yScale(d["crime_rate"]);
-        })
-        .style("fill", function (d) {
-        return colorScale(d["state"]);
+        return height - yScale(d["Per_Set"]);
         });
 
     console.log("test")
