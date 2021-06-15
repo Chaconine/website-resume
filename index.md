@@ -193,7 +193,7 @@ function dragended(d) {
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
     - Hosted on Github Pages
 
-<img src="assts/taga.png"/>
+<img src="assets/taga.png"/>
 
 - [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
     - Developed 3D visualizer for Python with package pptk that renders 2 million points from the Microsoft Kinect
@@ -236,7 +236,7 @@ var svg = d3.select("#volleyball")
     
 //Read the data
 d3.csv("data/aces.csv").then(function(data) {
-    
+
 //Set Ranges for X and Y scales
 var xScale = d3
     .scaleBand()
@@ -265,7 +265,6 @@ svg.append("g")
     .call(d3.axisBottom(xScale))
     .attr("transform", "translate(0," + height + ")")
 
-
 //Y axis
 svg
     .append("g")
@@ -273,7 +272,6 @@ svg
     .attr("transform", "translate(10,0)")
     .append("text")
     .text("Per Set")
-
 
 //Bars
 svg
