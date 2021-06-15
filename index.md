@@ -4,6 +4,8 @@
 
 - Visualizations in D3.js
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+
 <svg id="graph"></svg>
 
 <script>
