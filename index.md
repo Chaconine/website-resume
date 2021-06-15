@@ -291,7 +291,7 @@ d3.csv("data/aces.csv").then(function(data) {
         })
         .attr("width", xScale.bandwidth())
         .attr("y", function (d) {
-            return height;
+            return yScale(d.PerSet);
         })
         .attr("height", function (d) {
             return height - yScale(d.PerSet);
