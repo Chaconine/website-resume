@@ -195,9 +195,7 @@ d3.select("#stats").on("change", function(d) {
     update()
 })
     
-
 console.log("test")
-})
 
 </script>
 
