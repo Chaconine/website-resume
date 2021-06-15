@@ -4,7 +4,7 @@
 
 - Visualizations in D3.js
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
 
 <div class="bar-chart"></div>
 
