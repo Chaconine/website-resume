@@ -117,10 +117,8 @@ var datasets = {aces: "data/aces.csv",
 
 var path = datasets[document.getElementById("stats").value];
 
-console.log(path);
-
 //Read the data
-d3.csv(path, function(data) {
+d3.csv(path).then(function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = data[0]
