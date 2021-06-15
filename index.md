@@ -263,7 +263,7 @@ yScale.domain([
 svg.append("g")
     .attr("class", "x axis")
     .call(d3.axisBottom(xScale))
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0,10)")
 
 //Y axis
 svg
