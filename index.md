@@ -97,8 +97,8 @@ barChart.init();
 
 <script type="text/javascript">
     var margin = { top: 20, right: 20, bottom: 20, left: 20 };
-    var width = 560 - margin.left - margin.right;
-    var height = 315 - margin.top - margin.bottom;
+    var width = 900 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
