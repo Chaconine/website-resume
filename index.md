@@ -97,8 +97,8 @@ barChart.init();
 
 <script type="text/javascript">
     var margin = { top: 20, right: 20, bottom: 20, left: 20 };
-    var width = 900 - margin.left - margin.right;
-    var height = 500 - margin.top - margin.bottom;
+    var width = 622 - margin.left - margin.right;
+    var height = 350 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
@@ -138,7 +138,7 @@ function update() {
         var xScale = d3
             .scaleBand()
             .range([0, width - xPadding])
-            .padding(0.1);
+            .padding(0.2);
         var yScale = d3.scaleLinear().range([height-yPadding, 0]);
 
         //Adding domain values to X and Y Scale
@@ -164,8 +164,8 @@ function update() {
         svg
             .append("text")
             .attr("class", "source")
-            .attr("x", 345)
-            .attr("y", 580)
+            .attr("x", height/2)
+            .attr("y", width)
             .attr("text-anchor", "start")
             .text("School");
 
@@ -181,7 +181,7 @@ function update() {
             .attr("class", "y label")
             .attr("text-anchor", "end")
             .attr("y", 0)
-            .attr("x", 50)
+            .attr("x", 10)
             .attr("dy", ".75em")
             .text("Per Set")
             .attr("transform", "translate(-5,-19)");
