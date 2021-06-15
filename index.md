@@ -160,6 +160,7 @@ function update() {
         //X axis label
         svg.append("g")
             .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(xScale))
 
         //Adding Y Axis and label
