@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 0, right: 0, bottom: 0, left: 0};
+    var margin = { top: 20, right: 20, bottom: 20, left: 20 };
     var width = 560 - margin.left - margin.right;
     var height = 315 - margin.top - margin.bottom;
 
@@ -142,15 +142,15 @@ function update() {
         //Adding X Axis
         svg
             .append("g")
-            .attr("transform", "translate(0,315)")
+            .attr("transform", "translate(0,550)")
             .call(d3.axisBottom(xScale));
 
         //X axis label
         svg
             .append("text")
             .attr("class", "source")
-            .attr("x", 560)
-            .attr("y", 315)
+            .attr("x", 345)
+            .attr("y", 580)
             .attr("text-anchor", "start")
             .text("School");
 
@@ -166,7 +166,7 @@ function update() {
             .attr("class", "y label")
             .attr("text-anchor", "end")
             .attr("y", 0)
-            .attr("x", 10)
+            .attr("x", 50)
             .attr("dy", ".75em")
             .text("Per Set")
             .attr("transform", "translate(-5,-19)");
