@@ -167,7 +167,7 @@ function update() {
             .attr("x", width/2)
             .attr("y", height)
             .attr("text-anchor", "start")
-            .text("Schools");
+            .text("Schools")
             //select all text labels in the axis, then position + rotate
             .selectAll("text")  
                 .style("text-anchor", "end")
