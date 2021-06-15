@@ -115,7 +115,8 @@ var datasets = {Aces: "data/aces.csv",
 
 // A function that updates the chart
 function update() {
-        var svg.remove();
+        
+        document.getElementById("volleyball").innerHTML="";
 
         // append the svg object to the body of the page
         var svg = d3.select("#volleyball")
