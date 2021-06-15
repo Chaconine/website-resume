@@ -136,8 +136,7 @@ d3.csv(path).then(function(data) {
       .domain(d3.extent(data, function(d) { return d.School; }))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).ticks(7));
+      .call(d3.axisBottom(x).ticks(42));
 
     // Add Y axis
     var y = d3.scaleLinear()
