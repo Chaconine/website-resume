@@ -242,13 +242,11 @@ var yScale = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 //------------------------DATA PREPARATION-----------------------//
-var dataset = d3.csv("data.csv");
+var dataset = d3.csv("data/data.csv");
 dataset.then(function(data) {  
     xScale.domain(data.map(function(d) {return d.cat}))
     yScale.domain([0, d3.max(data, function(d) {return d.val; })]);
 });
-
-console.log(dataset);
 
 //----------------------------DRAWING----------------------------//
 //-----------------------------AXES------------------------------//
