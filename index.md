@@ -89,6 +89,8 @@ barChart.init();
 
 - NCAA D1 volleyball statistics
 
+<div id="pizza"></div>
+
 <script>
     var dataset = [
         {date: "01/01/2016", pizzas: 10000},
@@ -127,7 +129,7 @@ barChart.init();
         .y(function(d) { return y(d.pizzas/1000); })
 
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#pizza").append("svg")
         .style("background-color", '#888')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
