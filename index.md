@@ -296,7 +296,7 @@ svg
     .attr("height", function (d) {
         return height - yScale(d.PerSet);
     });
-})
+});
     
 console.log("test");
 
