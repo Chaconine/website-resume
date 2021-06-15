@@ -151,7 +151,7 @@ function update() {
             0,
             d3.max(data, function (d) {
                 return d.Per_Set;
-            }),
+            }) * 1.5,
         ]);
 
         //Adding X Axis
@@ -168,6 +168,12 @@ function update() {
             .attr("y", height)
             .attr("text-anchor", "start")
             .text("Schools");
+            //select all text labels in the axis, then position + rotate
+            .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-1em")
+            .attr("dy", "-0.5em")
+            .attr("transform", "rotate(-90)");
 
         //Adding Y Axis
         svg
