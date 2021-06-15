@@ -185,7 +185,7 @@ function update() {
                 return yScale(d.Per_Set)/0.8;
             })
             .attr("height", function (d) {
-                return height - yScale(d.Per_Set)/0.8 - margin.top;
+                return height - yScale(d.Per_Set)/0.8 - margin.bottom;
             });
     })
 }
