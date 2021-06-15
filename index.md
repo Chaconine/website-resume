@@ -97,19 +97,14 @@ barChart.init();
 
 <script type="text/javascript">
 
-// set the dimensions and margins of the graph
-var margin = {top: 0, right: 0, bottom: 0, left: 0},
-    width = 560,
-    height = 315;
+var width = 560;
+var height = 315;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
   .insert("svg")
     .attr("width", width)
     .attr("height", height)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
 
 var datasets = {Aces: "data/aces.csv",
                 Assists: "data/assists.csv",
@@ -135,25 +130,20 @@ d3.csv(path).then(function(data) {
         .scaleBand()
         .range([0, width])
         .padding(0.1);
-      var yScale = d3.scaleLinear().range([height - yPadding, 0]);
+    var yScale = d3.scaleLinear().range([height - yPadding, 0]);
 
-    //Get crime_rate as an integer
-        data.forEach(function (d) {
-          d["y_value"] = +d[selected];
-        });
-
-        //Adding domain values to X and Y Scale
-        xScale.domain(
-          data.map(function (d) {
-            return d.School;
-          })
-        );
-        yScale.domain([
-          0,
-          d3.max(data, function (d) {
-            return d["y_value"];
-          }),
-        ]);
+    //Adding domain values to X and Y Scale
+    xScale.domain(
+        data.map(function (d) {
+        return d.School;
+        })
+    );
+    yScale.domain([
+        0,
+        d3.max(data, function (d) {
+        return d[selected];
+        }),
+    ]);
 
     console.log("test")
 })
