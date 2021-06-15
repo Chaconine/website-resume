@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    var margin = { top: 0, right: 0, bottom: 0, left: 0 };
     var width = 622 - margin.left - margin.right;
     var height = 350 - margin.top - margin.bottom;
 
@@ -132,14 +132,14 @@ function update() {
         d3.csv(path).then(function(data) {
 
         //Set Ranges for X and Y Scale
-        xPadding = 0;
-        yPadding = 10;
+        xPadding = 10;
+        yPadding = 20;
 
         var xScale = d3
             .scaleBand()
-            .range([0, width - xPadding])
+            .range([0, width - 2*xPadding])
             .padding(0.2);
-        var yScale = d3.scaleLinear().range([height-yPadding, 0]);
+        var yScale = d3.scaleLinear().range([height-2*yPadding, 0]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -151,14 +151,14 @@ function update() {
             0,
             d3.max(data, function (d) {
                 return d.Per_Set;
-            }) * 1.5,
+            }) * 1.2,
         ]);
             
 
         //X axis label
         svg.append("g")
             .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(0," + height - yPadding + ")")
             .call(d3.axisBottom(xScale))
             .selectAll("text")
                 .attr("y", 0)
@@ -182,7 +182,7 @@ function update() {
             .attr("x", 10)
             .attr("dy", ".75em")
             .text("Per Set")
-            .attr("transform", "translate(-5,-19)");
+            .attr("transform", "translate(0,-10)");
 
         //Bars
         svg
