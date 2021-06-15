@@ -20,7 +20,7 @@ var barChart = {
   init: function() {
     this.height = 315;
     this.width = 560;
-    this.padding = 0;
+    this.padding = 20;
     this.el = ".bar-chart"; 
 
     barWidth = Math.floor((this.width - (this.padding * (data.length - 1))) / data.length);
@@ -58,6 +58,7 @@ var barChart = {
 }
 
 barChart.init();
+
 </script>
 
 - [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
