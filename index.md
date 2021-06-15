@@ -87,13 +87,14 @@ barChart.init();
 
 - NCAA D1 volleyball statistics
 
-<div class="bar-chart-test"></div>
+<select id="selectButton"></select>
+<div id="my_dataviz"></div>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <script type="text/javascript">
 
-  var n = 10,
-    random = function() { return Math.floor(Math.random() * 100); },
-    data = d3.range(n).map(random); 
+  var n = 50,
+    data = d3.csv(data/assists.csv); 
 
 var barChart = {
   init: function() {
