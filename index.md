@@ -229,7 +229,7 @@ function dragended(d) {
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 0, right: 0, bottom: 80, left: 80 };
+    var margin = { top: 0, right: 0, bottom: 80, left: 0 };
     var width = 622 - margin.left - margin.right;
     var height = 500 - margin.top - margin.bottom;
 
@@ -260,6 +260,7 @@ function update() {
 
         var path = datasets[document.getElementById("stats").value];
 
+        
         //Read the data
         d3.csv(path).then(function(data) {
 
