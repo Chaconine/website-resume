@@ -224,7 +224,7 @@ function dragended(d) {
 <script type="text/javascript">
     var margin = { top: 0, right: 0, bottom: 80, left: 80 };
     var width = 622 - margin.left - margin.right;
-    var height = 700 - margin.top - margin.bottom;
+    var height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
@@ -241,7 +241,6 @@ d3.csv("data/aces.csv").then(function(data) {
     var xScale = d3
         .scaleBand()
         .range([0, width])
-        .round(true)
         .padding(0.2);
     var yScale = d3
         .scaleLinear()
