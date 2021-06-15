@@ -6,7 +6,7 @@
 
 - Visualizations in D3.js
 
-<script src="/_includes/chart.js">
+<script src="_includes/chart.js">
 
 </script>
 
