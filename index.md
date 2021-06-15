@@ -6,6 +6,8 @@
 
 - Visualizations in D3.js
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+
 <script src="js/chart.js" type="text/javascript"></script>
 
 - [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
