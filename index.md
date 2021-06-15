@@ -4,7 +4,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
 
-- [Visualizations in D3.js](https://github.com/Chaconine/website-resume)
+- [Visualizations in D3.js](https://github.com/Chaconine/website-resume) A force undirected graph of players from Les Misérables.
 
 <svg id="graph"></svg>
 
@@ -217,7 +217,7 @@ function dragended(d) {
 
 - [Elementary Differential Geometry](https://netmath.illinois.edu/college/math-423), Math 423 at UIUC
 
-- [NCAA D1 volleyball statistics](https://www.ncaa.com/stats/volleyball-men/d1/current/team/525)
+- [NCAA D1 volleyball statistics, a graph of top schools and respective aces per set](https://www.ncaa.com/stats/volleyball-men/d1/current/team/525)
 
 <div id="volleyball"></div>
 
@@ -232,7 +232,7 @@ var svg = d3.select("#volleyball")
     .attr("width", width)
     .attr("height", height)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + -margin.bottom + ")");
     
 //Read the data
 d3.csv("data/aces.csv").then(function(data) {
