@@ -6,37 +6,39 @@ An engineer interested in making concise, accessible, and intuitive data visuali
 
 ### Projects
 
-1. [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
+- Visualizations in D3.js
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dnkyyjuUDek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="http://bl.ocks.org/mbostock/raw/4061502/0a200ddf998aa75dfdb1ff32e16b680a15e5cb01/" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-- Developed 3D visualizer for Python with package pptk that renders 2 million points from the Microsoft Kinect
+- [Prototyped website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
+    - HTML/CSS available in ![github repo](https://github.com/Chaconine/TagaLabWebsite)
+    - Hosted on Github Pages
+
+- [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
+    - Developed 3D visualizer for Python with package pptk that renders 2 million points from the Microsoft Kinect
+    - Tested unsupervised methods for understanding social behaviors
+    - Worked on various models for inferring 3d kinematics from 2d images
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pSL2Q0v8fgA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- Tested unsupervised methods for understanding social behaviors
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ib26lk4dvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-2. [Static website design for Taga Lab at Berkeley](https://chaconine.github.io/research.html)
-- Written from scratch, hosted on github pages
-
-3. Visualizations in D3.js
-
-4. Training graph neural networks 
-- Non-Euclidean relationships between data, (i.e. social graphs, citation networks) require unique approaches to embedding data so they can be visualized 
+- Training graph neural networks 
+    - Non-Euclidean relationships between data, (i.e. social graphs, citation networks) require unique approaches to embedding data so they can be visualized 
+    - Working through Stanford's CS224w, focused primarily on various implementations and architectures of graph neural nets in PyTorch
 
 ### Hobbies
 
-1. Math with manim, initially developed by 3b1b
+- Animating math with manim, initial package developed by 3b1b
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QMzvg8Z4-fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-2. Rome-wasnt-built-in-a-day, a visual 3d voxel bridge builder that uses reinforcement learning policies to build bridges of varying complexity, working with Lyric Doshi (in progress)
+- Rome-wasnt-built-in-a-day, a visual 3d voxel bridge builder that uses reinforcement learning policies to build bridges of varying complexity, working with Lyric Doshi (in progress)
 
-3. [Elementary Differential Geometry](https://netmath.illinois.edu/college/math-423), Math 423 at UIUC, inspired parametric curve tracing on unit sphere in D3.js
+- [Elementary Differential Geometry](https://netmath.illinois.edu/college/math-423), Math 423 at UIUC, inspired parametric curve tracing on unit sphere in D3.js
 
-4. [Blogging about neuroscience](https://sonichedgehogs.com/)
+- [Blogging about neuroscience](https://sonichedgehogs.com/)
 
 ### Education
 **UC Berkeley**<br/>
