@@ -123,7 +123,7 @@ d3.csv(path).then(function(data) {
     // List of groups (here I have one group per column)
     var allGroup = data[0]
 
-    d3.select("#selectButton")
+    var selected = d3.select("#selectButton")
       .selectAll('myOptions')
      	.data(allGroup)
       .enter()
@@ -131,19 +131,29 @@ d3.csv(path).then(function(data) {
       .text(function (d) { return d; }) // text shown in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-    // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return d.School; }))
-      .range([ 0, width ]);
-    svg.append("g")
-      .call(d3.axisBottom(x).ticks(42));
+    var xScale = d3
+        .scaleBand()
+        .range([0, width])
+        .padding(0.1);
+      var yScale = d3.scaleLinear().range([height - yPadding, 0]);
 
-    // Add Y axis
-    var y = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return +d.Per_Set; })])
-      .range([ height, 0 ]);
-    svg.append("g")
-      .call(d3.axisLeft(y));
+    //Get crime_rate as an integer
+        data.forEach(function (d) {
+          d["y_value"] = +d[selected];
+        });
+
+        //Adding domain values to X and Y Scale
+        xScale.domain(
+          data.map(function (d) {
+            return d.School;
+          })
+        );
+        yScale.domain([
+          0,
+          d3.max(data, function (d) {
+            return d["y_value"];
+          }),
+        ]);
 
     console.log("test")
 })
