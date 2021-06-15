@@ -87,7 +87,7 @@ barChart.init();
 
 - NCAA D1 volleyball statistics
 
-div class="bar-chart-test"></div>
+<div class="bar-chart-test"></div>
 
 <script type="text/javascript">
 
