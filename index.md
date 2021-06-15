@@ -89,97 +89,191 @@ barChart.init();
 
 - NCAA D1 volleyball statistics
 
-<div id="pizza"></div>
+<div class="viz"></div>
 
 <script>
-    var dataset = [
-        {date: "01/01/2016", pizzas: 10000},
-        {date: "01/02/2016", pizzas: 20000},
-        {date: "01/03/2016", pizzas: 40000},
-        {date: "01/04/2016", pizzas: 30000},
-        {date: "01/05/2016", pizzas: 30000},
-        {date: "01/06/2016", pizzas: 50000},
-        {date: "01/07/2016", pizzas: 30000},
-        {date: "01/08/2016", pizzas: 50000},
-        {date: "01/09/2016", pizzas: 60000},
-        {date: "01/10/2016", pizzas: 20000},
-        {date: "01/11/2016", pizzas: 10000},
-        {date: "01/12/2016", pizzas: 90000},
-    ];
+// data describing the standings for the 2007 f1 championship
+const championship = [
+  {
+    name: 'Kimi Räikkönen',
+    points: 110,
+  },
+  {
+    name: 'Lewis Hamilton',
+    points: 109,
+  },
+  {
+    name: 'Fernando Alonso',
+    points: 109,
+  },
+  {
+    name: 'Felipe Massa',
+    points: 94,
+  },
+  {
+    name: 'Nick Heidfeld',
+    points: 61,
+  },
+  {
+    name: 'Robert Kubica',
+    points: 39,
+  },
+  {
+    name: 'Heikki Kovalainen',
+    points: 30,
+  },
+  {
+    name: 'Giancarlo Fisichella',
+    points: 21,
+  },
+  {
+    name: 'Nico Rosberg',
+    points: 20,
+  },
+  {
+    name: 'David Coulthard',
+    points: 14,
+  },
+  {
+    name: 'Alexander Wurz',
+    points: 13,
+  },
+  {
+    name: 'Mark Webber',
+    points: 10,
+  },
+  {
+    name: 'Jarno Trulli',
+    points: 8,
+  },
+  {
+    name: 'Sebastian Vettel',
+    points: 6,
+  },
+  {
+    name: 'Jenson Button',
+    points: 6,
+  },
+  {
+    name: 'Ralf Schumacher',
+    points: 5,
+  },
+  {
+    name: 'Takuma Sato',
+    points: 4,
+  },
+  {
+    name: 'Vitantonio Liuzzi',
+    points: 3,
+  },
+  {
+    name: 'Adrian Sutil',
+    points: 1,
+  },
+  {
+    name: 'Rubens Barrichello',
+    points: 0,
+  },
+  {
+    name: 'Scott Speed',
+    points: 0,
+  },
+  {
+    name: 'Kazuki Nakajima',
+    points: 0,
+  },
+  {
+    name: 'Anthony Davidson',
+    points: 0,
+  },
+  {
+    name: 'Sakon Yamamoto',
+    points: 0,
+  },
+  {
+    name: 'Christijan Albers',
+    points: 0,
+  },
+  {
+    name: 'Markus Winkelhock',
+    points: 0,
+  },
+];
 
-    // Calculate Margins and canvas dimensions
-    var margin = {top: 40, right: 40, bottom: 40, left: 60},
-        width = 700 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+// data describing the standings for the f1 drivers who scored at least a point
+// this to reduce the visual burden introduced by too many data points
+const data = championship.filter(({ points }) => points > 0);
 
-    //Parsers and Formaters
-    var parseTime = d3.timeParse("%d/%m/%Y");
-    var formatTime = d3.timeFormat("%a/%b/%Y");
+// target the prescribed root node and add an svg element
+const margin = {
+  top: 20,
+  right: 20,
+  bottom: 20,
+  left: 100, // add more white space on the left side of the visualization to display the names
+};
 
-    // Scales
-    var x = d3.scaleTime()
-        .range([0, width]);
+const width = 800 - (margin.left + margin.right);
+const height = 550 - (margin.top + margin.bottom);
 
-    var y = d3.scaleLinear()
-        .range([height, 0]);
+const svg = d3
+  .select('.viz')
+  .append('svg')
+  .attr('viewBox', `0 0 ${width + (margin.left + margin.right)} ${height + (margin.top + margin.bottom)}`)
+  .attr('width', width)
+  .attr('height', height);
 
-    // Line
-    var line = d3.line()
-        .x(function(d) { return x(this.parseTime(d.date)); })
-        .y(function(d) { return y(d.pizzas/1000); })
+const group = svg
+  .append('g')
+  .attr('transform', `translate(${margin.left} ${margin.top})`);
 
+// describe a quantitative scale for the x axis, for the racers' points
+const xScale = d3
+  .scaleLinear()
+  .domain([0, d3.max(data, ({ points }) => points)])
+  .range([0, width]);
 
-    var svg = d3.select("#pizza").append("svg")
-        .style("background-color", '#888')
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-    //Arguments for axes : Ranges for X, y  
-    x.domain(d3.extent(dataset, function(d) { return parseTime(d.date); }));
-    y.domain(d3.extent(dataset, function(d) { return d.pizzas/1000; }));
+// describe a qualitative scale for the y axis, for the racers' names
+const yScale = d3
+  .scaleBand()
+  .domain(data.map(({ name }) => name))
+  .range([0, height])
+  // padding allows to separate the shapes making use of the scale and the value returned by the yScale.bandwidth() function
+  // 0.2 means 20% is dedicated to white space around the band
+  .padding(0.2);
 
-    // Axes
-    svg.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+// add axes describing the values
+const xAxis = d3
+  .axisBottom(xScale);
 
-    svg.append("g")
-        .attr("class", "axis axis--y")
-        .call(d3.axisLeft(y));
-    // Labels
-    svg.append("text")
-                .attr("text-anchor", "middle")
-                .style("font-size", "14px")
-                .attr("transform", "translate("+ (margin.left - 94 ) +","+(height/2)+")rotate(-90)")  
-                .text("Pizzas ( Thousands ) ");
+const yAxis = d3
+  .axisLeft(yScale);
 
-    svg.append("text")
-                .style("font-size", "14px")
-                .attr("text-anchor", "middle") 
-                .attr("transform", "translate("+ (width/2) +","+(height-(margin.bottom -74))+")")
-                .text("Date");
+group
+  .append('g')
+  .attr('transform', `translate(0 ${height})`)
+  .call(xAxis);
 
-    //  Chart Title
-    svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", 20 - (margin.top / 2))
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px") 
-            .text("Pizza consumption");
+group
+  .append('g')
+  .call(yAxis);
 
-    // Data Lines:
+// include a group element for each data point, to nest connected elements
+const groups = group
+  .selectAll('g.group')
+  .data(data, ({ name }) => name)
+  .enter()
+  .append('g')
+  .attr('class', 'group')
+  // translate the group vertically according to the y scale
+  .attr('transform', ({ name }) => `translate(0 ${yScale(name)})`);
 
-    svg.append("path")
-        .datum(dataset)
-        .attr("class", "line")
-        .attr("d", line);
-
-    // See also :
-    //https://github.com/d3/d3-shape/blob/master/README.md#lines
-    //https://bl.ocks.org/mbostock/02d893e3486c70c4475f
+// for each data point add a rectangle describing the points awarded to the respective racer
+groups
+  .append('rect')
+  .attr('x', 0)
+  .attr('y', 0)
+  .attr('width', ({ points }) => xScale(points))
+  .attr('height', yScale.bandwidth());
 </script>
 
 - [Blogging about neuroscience](https://sonichedgehogs.com/)
