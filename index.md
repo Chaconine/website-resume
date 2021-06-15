@@ -9,6 +9,7 @@
 <svg id="graph"></svg>
 
 <script>
+// Inspired by: https://observablehq.com/@d3/force-directed-graph
 var width = 560;
 var height = 315;
 var color = d3.scaleOrdinal(d3.schemeCategory10);
@@ -224,7 +225,7 @@ function dragended(d) {
 <script type="text/javascript">
     var margin = { top: 0, right: 0, bottom: 80, left: 80 };
     var width = 622 - margin.left - margin.right;
-    var height = 500 - margin.top - margin.bottom;
+    var height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
@@ -232,7 +233,7 @@ var svg = d3.select("#volleyball")
     .attr("width", width)
     .attr("height", height)
     .append("g")
-        .attr("transform", "translate(" + margin.left + "," + -(margin.bottom+30) + ")");
+        .attr("transform", "translate(" + margin.left + "," + -(margin.bottom) + ")");
     
 //Read the data
 d3.csv("data/aces.csv").then(function(data) {
@@ -297,8 +298,6 @@ d3.csv("data/aces.csv").then(function(data) {
         });
 });
     
-console.log("test");
-
 </script>
 
 - [Blogging about neuroscience](https://sonichedgehogs.com/)
