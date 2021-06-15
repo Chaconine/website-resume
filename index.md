@@ -8,6 +8,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 
+{% highlight html %}
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+{% endhighlight %}
+
 <script src="js/chart.js" type="text/javascript"></script>
 
 <div id="example">
