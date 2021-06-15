@@ -131,10 +131,7 @@ function update() {
         //Read the data
         d3.csv(path).then(function(data) {
 
-        //Set Ranges for X and Y Scale
-        xPadding = 40;
-        yPadding = 40;
-
+        //Set Ranges for X and Y scales
         var xScale = d3
             .scaleBand()
             .range([0, width])
@@ -163,10 +160,12 @@ function update() {
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(xScale))
 
+
         //Y axis
         svg
             .append("g")
             .call(d3.axisLeft(yScale))
+            .attr("transform", "translate(10,0)")
             .append("text")
             .text("Per Set")
 
