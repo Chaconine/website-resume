@@ -230,9 +230,9 @@ function dragended(d) {
 var svg = d3.select("#volleyball")
     .insert("svg")
     .attr("width", width)
-    .attr("height", height)
+    .attr("height", height-10)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + -(margin.bottom+0.2) + ")");
+        .attr("transform", "translate(" + margin.left + "," + -(margin.bottom+10) + ")");
     
 //Read the data
 d3.csv("data/aces.csv").then(function(data) {
