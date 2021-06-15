@@ -137,11 +137,11 @@ function update() {
 
         var xScale = d3
             .scaleBand()
-            .range([0, width*0.8])
+            .range([0, width])
             .padding(0.2);
         var yScale = d3
             .scaleLinear()
-            .range([height*0.8, 0]);
+            .range([height, 0]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -182,10 +182,10 @@ function update() {
             })
             .attr("width", xScale.bandwidth())
             .attr("y", function (d) {
-                return yScale(d.Per_Set)/0.8;
+                return yScale(d.Per_Set);
             })
             .attr("height", function (d) {
-                return height - yScale(d.Per_Set)/0.8 - margin.bottom;
+                return height - yScale(d.Per_Set) - margin.bottom;
             });
     })
 }
