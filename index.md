@@ -132,14 +132,14 @@ function update() {
         d3.csv(path).then(function(data) {
 
         //Set Ranges for X and Y Scale
-        xPadding = 10;
-        yPadding = 20;
+        xPadding = 40;
+        yPadding = 40;
 
         var xScale = d3
             .scaleBand()
-            .range([0, width - 2*xPadding])
+            .range([xPadding, width - xPadding])
             .padding(0.2);
-        var yScale = d3.scaleLinear().range([height-2*yPadding, 0]);
+        var yScale = d3.scaleLinear().range([height-yPadding, yPadding]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
@@ -161,8 +161,8 @@ function update() {
             .attr("transform", "translate(0," + height - yPadding + ")")
             .call(d3.axisBottom(xScale))
             .selectAll("text")
-                .attr("y", 0)
-                .attr("x", 9)
+                .attr("y", height/2)
+                .attr("x", width/2)
                 .attr("dy", ".35em")
                 .attr("transform", "rotate(90)")
                 .style("text-anchor", "start");
