@@ -1,68 +1,48 @@
-var margin = { top: 20, right: 20, bottom: 70, left: 40 },
-    width = 600 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+var n = 10, // how many bars?
+    random = function () { return Math.floor(Math.random() * 100); }, // randomize some numbers for data
+    data = d3.range(n).map(random); // an array of randomized datapoints
 
-// Parse the date / time
-var parseDate = d3.time.format("%Y-%m").parse;
+var barChart = {
+    init: function () {
+        this.height = 315;
+        this.width = 560;
+        this.padding = 0;
+        this.el = ".bar-chart"; // where we'll put our svg 
 
-var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+        // calculate the bar width from the total chart width
+        barWidth = Math.floor((this.width - (this.padding * (data.length - 1))) / data.length);
+        barHeight = this.height - 20;
 
-var y = d3.scale.linear().range([height, 0]);
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .tickFormat(d3.time.format("%Y-%m"));
+        this.svg = d3.select(this.el).insert('svg', ':first-child')
+            .attr('width', this.width)
+            .attr("height", this.height);
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .ticks(10);
+        this.draw();
+    },
+    draw: function () {
+        this.meters = this.svg
+            .append("g")
+            .attr("class", "meter")
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append('g')
+            .attr("class", "bar");
 
-var svg = d3.select("div#example").selectAll("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+        this.drawBar().attr("class", "background").attr("y", 0).attr("height", barHeight);
+        this.drawBar().attr("class", "foreground").attr("y", barHeight).attr("height", 0);
+    },
+    // this actually draws a bar
+    drawBar: function () {
+        var self = this;
 
-d3.csv("data/bar-data.csv", function (error, data) {
+        return this.meters.append("rect")
+            .attr("x", function (d, i) {
+                return i * (barWidth + self.padding);
+            })
+            .attr("width", barWidth);
+    }
+}
 
-    data.forEach(function (d) {
-        d.date = parseDate(d.date);
-        d.value = +d.value;
-    });
-
-    x.domain(data.map(function (d) { return d.date; }));
-    y.domain([0, d3.max(data, function (d) { return d.value; })]);
-
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-        .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", "-.55em")
-        .attr("transform", "rotate(-90)");
-
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Value ($)");
-
-    svg.selectAll("bar")
-        .data(data)
-        .enter().append("rect")
-        .style("fill", "steelblue")
-        .attr("x", function (d) { return x(d.date); })
-        .attr("width", x.rangeBand())
-        .attr("y", function (d) { return y(d.value); })
-        .attr("height", function (d) { return height - y(d.value); });
-
-});
+barChart.init();
