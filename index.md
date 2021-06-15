@@ -94,6 +94,20 @@ barChart.init();
 
 <script type="text/javascript">
 
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 560,
+    height = 315;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .insert("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
   var n = 50,
     random = function() { return Math.floor(Math.random() * 100); },
     data = d3.range(n).map(random); 
@@ -103,51 +117,8 @@ barChart.init();
      	.data(allGroup)
       .enter()
     	.append('option')
-      .text(function (d) { return d; }) // text showed in the menu
+      .text(function (d) { return d; }) // text shown in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
-
-var barChart = {
-  init: function() {
-    this.height = 315;
-    this.width = 560;
-    this.padding = 20;
-    this.el = ".bar-chart-test"; 
-
-    barWidth = Math.floor((this.width - (this.padding * (data.length - 1))) / data.length);
-    barHeight = this.height - 20;
-
-    this.svg = d3.select(this.el).insert('svg', ':first-child')
-      .attr('width', this.width)
-      .attr("height", this.height);
-    
-    this.draw();
-  },
-    draw: function() {
-    this.meters = this.svg
-      .append("g")
-        .attr("class", "meter")
-        .selectAll("rect")
-          .data(data)
-          .enter()
-          .append('g')
-            .attr("class", "bar");
-
-    this.drawBar().attr("class", "background").attr("y", 0).attr("height", barHeight);
-    this.drawBar().attr("class", "foreground").attr("y", barHeight).attr("height", 0);
-  },
-
-    drawBar: function () {
-    var self = this;
-
-    return this.meters.append("rect")
-      .attr("x", function (d, i) {
-        return i * (barWidth + self.padding);
-      })
-      .attr("width", barWidth);
-  }
-}
-
-barChart.init();
 
 </script>
 
