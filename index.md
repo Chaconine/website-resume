@@ -246,8 +246,6 @@ d3.csv("data/aces.csv").then(function(data) {
     var yScale = d3
         .scaleLinear()
         .range([height, 0])
-        .round(true)
-        .padding(0.2);
 
     //Adding domain values to X and Y Scale
     xScale.domain(
