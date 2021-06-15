@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+    var margin = { top: 30, right: 30, bottom: 30, left: 30 };
     var width = 560 - margin.left - margin.right;
     var height = 315 - margin.top - margin.bottom;
 
@@ -113,80 +113,90 @@ var datasets = {Aces: "data/aces.csv",
                 Assists: "data/assists.csv",
                 Hitting: "data/hitting.csv"};
 
-var path = datasets[document.getElementById("stats").value];
+// A function that updates the chart
+function update() {
+        var path = datasets[document.getElementById("stats").value];
 
-//Read the data
-d3.csv(path).then(function(data) {
+        //Read the data
+        d3.csv(path).then(function(data) {
 
-    var xScale = d3
-        .scaleBand()
-        .range([0, width])
-        .padding(0.1);
-    var yScale = d3.scaleLinear().range([height, 0]);
+        var xScale = d3
+            .scaleBand()
+            .range([0, width])
+            .padding(0.1);
+        var yScale = d3.scaleLinear().range([height, 0]);
 
-    //Adding domain values to X and Y Scale
-    xScale.domain(
-        data.map(function (d) {
-        return d.School;
-        })
-    );
-    yScale.domain([
-        0,
-        d3.max(data, function (d) {
-        return d["Per_Set"];
-        }),
-    ]);
+        //Adding domain values to X and Y Scale
+        xScale.domain(
+            data.map(function (d) {
+            return d.School;
+            })
+        );
+        yScale.domain([
+            0,
+            d3.max(data, function (d) {
+            return d["Per_Set"];
+            }),
+        ]);
 
-    //Adding X Axis
-    svg
-        .append("g")
-        .attr("transform", "translate(0,550)")
-        .call(d3.axisBottom(xScale));
+        //Adding X Axis
+        svg
+            .append("g")
+            .attr("transform", "translate(0,550)")
+            .call(d3.axisBottom(xScale));
 
-    //X axis label
-    svg
-        .append("text")
-        .attr("class", "source")
-        .attr("x", 345)
-        .attr("y", 580)
-        .attr("text-anchor", "start")
-        .text("State");
+        //X axis label
+        svg
+            .append("text")
+            .attr("class", "source")
+            .attr("x", 345)
+            .attr("y", 580)
+            .attr("text-anchor", "start")
+            .text("School");
 
-    //Adding Y Axis
-    svg
-        .append("g")
-        .call(d3.axisLeft(yScale))
-        .attr("transform", "translate(0,10)");
+        //Adding Y Axis
+        svg
+            .append("g")
+            .call(d3.axisLeft(yScale))
+            .attr("transform", "translate(0,10)");
 
-    //Y axis label
-    svg
-        .append("text")
-        .attr("class", "y label")
-        .attr("text-anchor", "end")
-        .attr("y", 0)
-        .attr("x", 50)
-        .attr("dy", ".75em")
-        .text("Crime Rate")
-        .attr("transform", "translate(-5,-19)");
+        //Y axis label
+        svg
+            .append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", 0)
+            .attr("x", 50)
+            .attr("dy", ".75em")
+            .text("Per Set")
+            .attr("transform", "translate(-5,-19)");
 
-    //Bars
-    svg
-        .selectAll(".bar")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("x", function (d) {
-            return xScale(d.School);
-        })
-        .attr("width", xScale.bandwidth())
-        .attr("y", function (d) {
-        return yScale(d["Per_Set"]);
-        })
-        .attr("height", function (d) {
-        return height - yScale(d["Per_Set"]);
-        });
+        //Bars
+        svg
+            .selectAll(".bar")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("x", function (d) {
+                return xScale(d.School);
+            })
+            .attr("width", xScale.bandwidth())
+            .attr("y", function (d) {
+            return yScale(d["Per_Set"]);
+            })
+            .attr("height", function (d) {
+            return height - yScale(d["Per_Set"]);
+            });
+    })
+}
 
-    console.log("test")
+// When the button is changed, run the updateChart function
+d3.select("#stats").on("change", function(d) {
+    update()
+})
+    
+
+console.log("test")
 })
 
 </script>
