@@ -262,7 +262,7 @@ yScale.domain([
 //X axis
 svg.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0,10)")
+    .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(xScale))
     .selectAll("text")
         .attr("y", 0)
@@ -276,7 +276,6 @@ svg.append("g")
 svg
     .append("g")
     .call(d3.axisLeft(yScale))
-    .attr("transform", "translate(10,0)")
     .append("text")
     .text("Per Set");
 
