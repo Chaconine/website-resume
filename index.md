@@ -4,7 +4,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
 
-- [Visualizations in D3.js](https://github.com/Chaconine/website-resume) A force undirected graph of players from Les Misérables.
+- [Visualizations in D3.js](https://github.com/Chaconine/website-resume): A force undirected graph of players and their interpersonal relationships from Les Misérables.
 
 <svg id="graph"></svg>
 
@@ -224,7 +224,7 @@ function dragended(d) {
 <script type="text/javascript">
     var margin = { top: 0, right: 0, bottom: 80, left: 80 };
     var width = 622 - margin.left - margin.right;
-    var height = 600 - margin.top - margin.bottom;
+    var height = 700 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
