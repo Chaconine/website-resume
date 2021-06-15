@@ -224,7 +224,7 @@ function dragended(d) {
 <script type="text/javascript">
     var margin = { top: 0, right: 0, bottom: 80, left: 80 };
     var width = 622 - margin.left - margin.right;
-    var height = 500 - margin.top - margin.bottom;
+    var height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#volleyball")
