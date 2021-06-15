@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 0, right: 40, bottom: 40, left: 40 };
+    var margin = { top: 0, right: 0, bottom: 40, left: 0 };
     var width = 622 - margin.left - margin.right;
     var height = 400 - margin.top - margin.bottom;
 
@@ -163,7 +163,7 @@ function update() {
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(xScale))
 
-        //Adding Y Axis and label
+        //Y axis     label
         svg
             .append("g")
             .call(d3.axisLeft(yScale))
