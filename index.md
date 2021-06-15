@@ -161,8 +161,8 @@ function update() {
             .attr("transform", "translate(0," + height - yPadding + ")")
             .call(d3.axisBottom(xScale))
             .selectAll("text")
-                .attr("y", height/2)
-                .attr("x", width/2)
+                .attr("y", height)
+                .attr("x", 0)
                 .attr("dy", ".35em")
                 .attr("transform", "rotate(90)")
                 .style("text-anchor", "start");
