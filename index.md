@@ -299,7 +299,6 @@ var datasets = {Aces: "data/aces.csv",
 
 // A function that updates the chart
 function update() {
-        console.log(d.Per_Set)
         document.getElementById("volleyball").innerHTML="";
 
         // append the svg object to the body of the page
