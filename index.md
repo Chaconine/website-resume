@@ -115,7 +115,15 @@ var datasets = {Aces: "data/aces.csv",
 
 // A function that updates the chart
 function update() {
-        var svg.selectall().remove();
+        var svg.remove();
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#volleyball")
+            .insert("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var path = datasets[document.getElementById("stats").value];
 
