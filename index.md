@@ -84,7 +84,7 @@ barChart.init();
 var width = 560,
     height = 315;
 
-var force = d3.layout.force()
+var force = d3.forceSimulation()
     .size([width, height])
     .nodes([{}]) // initialize with a single node
     .linkDistance(30)
