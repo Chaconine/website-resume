@@ -1,25 +1,11 @@
-date,value
-2018-jan,95
-2018-feb,75
-2018-mar,45
-2018-apr,65
-2018-may,88
-2018-jun,78
-2018-jul,70
-2018-aug,33
-2018-sep,43
-2018-okt,53
-2018-nov,31
-2018-dec,79
-2019-jan,21
-2019-feb,43
-2019-mar,55
-2019-apr,33
-2019-may,65
-2019-jun,12
-2019-jul,32
-2019-aug,76
-2019-sep,56
-2019-okt,78
-2019-nov,77
-2019-dec,57
+Rank,School,S,Aces,PerSet
+3,Daemen,36,88,2.44
+5,Penn St.,86,183,2.13
+2,BYU,81,139,1.72
+18,North Greenville,66,113,1.71
+17,UCLA,80,127,1.59
+6,Hawaii,65,103,1.58
+16,NJIT,65,102,1.57
+33,Saint Francis (PA),103,155,1.50
+32,Erskine,88,126,1.43
+21,Long Beach St.,47,67,1.43
