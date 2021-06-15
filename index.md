@@ -193,7 +193,7 @@ function dragended(d) {
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
     - Hosted on Github Pages
 
-<img src="assets/taga.png"/>
+<img src="assets/taga.png" width="560" height="315"/>
 
 - [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
     - Developed 3D visualizer for Python with package pptk that renders 2 million points from the Microsoft Kinect
@@ -222,7 +222,7 @@ function dragended(d) {
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 0, right: 0, bottom: 80, left: 0 };
+    var margin = { top: 0, right: 0, bottom: 80, left: 80 };
     var width = 622 - margin.left - margin.right;
     var height = 500 - margin.top - margin.bottom;
 
@@ -295,9 +295,7 @@ console.log("test")
 
 </script>
 
-
 - [Blogging about neuroscience](https://sonichedgehogs.com/)
-
 
 ### Education
 **UC Berkeley**<br/>
