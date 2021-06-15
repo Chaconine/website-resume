@@ -193,6 +193,8 @@ function dragended(d) {
     - HTML/CSS available in [github repo](https://github.com/Chaconine/TagaLabWebsite)
     - Hosted on Github Pages
 
+<img src="assts/taga.png"/>
+
 - [3D computer vision tracking with the Microsoft Kinect](https://github.com/Chaconine/Depth-tracking)
     - Developed 3D visualizer for Python with package pptk that renders 2 million points from the Microsoft Kinect
     - Tested unsupervised methods for understanding social behaviors
