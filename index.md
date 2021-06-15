@@ -120,11 +120,15 @@ function update() {
         //Read the data
         d3.csv(path).then(function(data) {
 
+        //Set Ranges for X and Y Scale
+        xPadding = 0;
+        yPadding = 10;
+
         var xScale = d3
             .scaleBand()
-            .range([0, width])
+            .range([0, width - xPadding])
             .padding(0.1);
-        var yScale = d3.scaleLinear().range([height, 0]);
+        var yScale = d3.scaleLinear().range([height-yPadding, 0]);
 
         //Adding domain values to X and Y Scale
         xScale.domain(
