@@ -98,7 +98,7 @@ barChart.init();
 <script type="text/javascript">
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 10},
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
     width = 560,
     height = 315;
 
