@@ -145,6 +145,8 @@ d3.csv(path).then(function(data) {
         }),
     ]);
 
+    console.log(selected)
+
     console.log("test")
 })
 
