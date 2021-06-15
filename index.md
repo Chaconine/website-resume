@@ -130,7 +130,7 @@ d3.csv(path).then(function(data) {
         .scaleBand()
         .range([0, width])
         .padding(0.1);
-    var yScale = d3.scaleLinear().range([height - yPadding, 0]);
+    var yScale = d3.scaleLinear().range([height, 0]);
 
     //Adding domain values to X and Y Scale
     xScale.domain(
