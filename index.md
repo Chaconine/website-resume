@@ -159,7 +159,7 @@ function update() {
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(xScale));
+            .call(d3.axisBottom(xScale))
             .selectAll("text")
                 .attr("y", 0)
                 .attr("x", 9)
