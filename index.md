@@ -96,7 +96,7 @@ barChart.init();
 <div id="volleyball"></div>
 
 <script type="text/javascript">
-    var margin = { top: 20, right: 20, bottom: 20, left: 20 };
+    var margin = { top: 40, right: 40, bottom: 40, left: 40 };
     var width = 622 - margin.left - margin.right;
     var height = 350 - margin.top - margin.bottom;
 
