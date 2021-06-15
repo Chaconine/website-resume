@@ -117,7 +117,7 @@ var datasets = {aces: "data/aces.csv",
 
 var path = datasets[document.getElementById("stats").value];
 
-console.log(document.getElementById("stats").value);
+console.log(path);
 
 //Read the data
 d3.csv(path, function(data) {
@@ -132,6 +132,21 @@ d3.csv(path, function(data) {
     	.append('option')
       .text(function (d) { return d; }) // text shown in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+    // Add X axis --> it is a date format
+    var x = d3.scaleLinear()
+      .domain(d3.extent(data, function(d) { return d.School; }))
+      .range([ 0, width ]);
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).ticks(7));
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain([0, d3.max(data, function(d) { return +d.Per Set; })])
+      .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
 })
 
 </script>
