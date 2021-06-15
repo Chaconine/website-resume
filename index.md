@@ -123,8 +123,8 @@ function update() {
         d3.csv(path).then(function(data) {
 
         //Set Ranges for X and Y Scale
-        xPadding = 0;
-        yPadding = 10;
+        xPadding = 20;
+        yPadding = 20;
 
         var xScale = d3
             .scaleBand()
