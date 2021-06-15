@@ -232,7 +232,7 @@ var svg = d3.select("#volleyball")
     .attr("width", width)
     .attr("height", height)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + -margin.bottom + ")");
+    .attr("transform", "translate(" + margin.left + "," + -(margin.bottom+0.1) + ")");
     
 //Read the data
 d3.csv("data/aces.csv").then(function(data) {
