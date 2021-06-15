@@ -93,18 +93,21 @@ barChart.init();
   <option value="Hitting">Hitting</option>
 </select>
 
-<div id="my_dataviz"></div>
+<div id="volleyball"></div>
 
 <script type="text/javascript">
-
-var width = 560;
-var height = 315;
+    var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+    var width = 560 - margin.left - margin.right,
+    var height = 315 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
-  .insert("svg")
+var svg = d3.select("#volleyball")
+    .insert("svg")
     .attr("width", width)
     .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 var datasets = {Aces: "data/aces.csv",
                 Assists: "data/assists.csv",
@@ -133,6 +136,38 @@ d3.csv(path).then(function(data) {
         return d["Per_Set"];
         }),
     ]);
+
+    //Adding X Axis
+    svg
+        .append("g")
+        .attr("transform", "translate(0,550)")
+        .call(d3.axisBottom(xScale));
+
+    //X axis label
+    svg
+        .append("text")
+        .attr("class", "source")
+        .attr("x", 345)
+        .attr("y", 580)
+        .attr("text-anchor", "start")
+        .text("State");
+
+    //Adding Y Axis
+    svg
+        .append("g")
+        .call(d3.axisLeft(yScale))
+        .attr("transform", "translate(0,10)");
+
+    //Y axis label
+    svg
+        .append("text")
+        .attr("class", "y label")
+        .attr("text-anchor", "end")
+        .attr("y", 0)
+        .attr("x", 50)
+        .attr("dy", ".75em")
+        .text("Crime Rate")
+        .attr("transform", "translate(-5,-19)");
 
     console.log("test")
 })
