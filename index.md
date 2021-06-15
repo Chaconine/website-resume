@@ -200,9 +200,10 @@ function dragended(d) {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pSL2Q0v8fgA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- Training graph neural networks 
+- [Training graph neural networks](http://web.stanford.edu/class/cs224w/)
     - Non-Euclidean relationships between data, (i.e. social graphs, citation networks) require unique approaches to embedding data so they can be visualized 
     - Working through Stanford's CS224w, focused primarily on various implementations and architectures of graph neural nets in PyTorch
+    - Deep learning journal club with Shuyu Wang, Lyric Doshi, Matthew Watson, and Dennis Feng
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ib26lk4dvck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -218,38 +219,32 @@ function dragended(d) {
 
 <script>
 
-//--------------------------PREPARATION--------------------------//
-//------------------------SVG PREPARATION------------------------//
 var width = 560;
 var height = 315;
 var margin = 5;
 var padding = 5;
 var adj = 20;
-// we are appending SVG first
+
 var svg = d3.select("div#container").append("svg")
             .attr("preserveAspectRatio", "xMinYMin meet")
-            //.attr("viewBox", "-20 -20 1600 1600")
             .attr("viewBox", "-" + adj + " -"+ adj + " " + (width + adj) + " " + (height + adj*2))
             .style("padding", padding)
             .style("margin", margin)
             .classed("svg-content", true);
 
-//-----------------------SCALES PREPARATION----------------------//
 var xScale = d3.scaleBand()
     .rangeRound([0, width])
     .paddingInner(0.05);
 var yScale = d3.scaleLinear()
     .rangeRound([height, 0]);
 
-//------------------------DATA PREPARATION-----------------------//
 var dataset = d3.csv("data/data.csv");
 dataset.then(function(data) {  
     xScale.domain(data.map(function(d) {return d.cat}))
     yScale.domain([0, d3.max(data, function(d) {return d.val; })]);
 });
 
-//----------------------------DRAWING----------------------------//
-//-----------------------------AXES------------------------------//
+
 svg.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
@@ -259,7 +254,6 @@ svg.append("g")
     .attr("class", "axis")
     .call(d3.axisLeft(yScale));
 
-//-----------------------------BARS------------------------------//
 dataset.then(function (data) { 
     svg.selectAll("div")
     .data(data)
